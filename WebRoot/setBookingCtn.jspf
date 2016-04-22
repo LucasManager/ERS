@@ -1,0 +1,91 @@
+
+<%@ include file="/WEB-INF/jsp/taglib.jsp" %>
+<cache:flush scope="session"/>
+<%@page import="com.apl.sha.ers.struts.form.*" %>
+<head>
+<LINK href="css/main.css" type="text/css" rel="stylesheet" />
+<LINK href="css/calendar.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/calendar.js"></script>
+<script type="text/javascript" src="js/setBookingCtn.js"></script>
+<title><fmt:message key="module.application.displayname"/>-<fmt:message key="module.application.booking.displayname"/></title>
+<meta name="keywords" content="application,depot" />
+</head>
+<%@ include file="/WEB-INF/jsp/pageheader.jsp" %>
+<table>
+<tr>
+<td valign="top">
+<%@ include file="/WEB-INF/jsp/applicationnav.jsp" %>
+</td>
+<td valign="top" width="60%">
+	<span class="DataTitle"><fmt:message key="setBookingCtn.function.displayname"/></span>
+	<br/><br/>
+	<table>
+		<tr class="DataTitle">
+		<td><fmt:message key="function.displayname"/></td>
+		<th><fmt:message key="booking.container.ctntype.displayname"/></th>
+		<th><fmt:message key="booking.container.intlcode.displayname"/></th>
+		<th><fmt:message key="booking.container.ctnqty.displayname"/></th>
+		<th><fmt:message key="booking.container.depotcode.displayname"/></th>
+		<th><fmt:message key="booking.container.reservedate.displayname"/></th>		
+		<th><fmt:message key="booking.container.pickupdate.displayname"/></th>
+		</tr>
+	<c:forEach items="${booking.ctns}" var="ctn">
+	<c:choose>
+		<c:when test="${ctn.value.status=='R'}">
+			<tr class="DataBody">
+			<td align="center"><a href="#" onclick="addCtn('${ctn.value.ctnCode}','${ctn.value.intlcode }',${ctn.value.ctnQty},'${ctn.value.depotCode}')"><img  src="image/modify.gif" title="<fmt:message key='function.modify.displayname'/>"/></a></td>
+			<td><c:out value="${ctn.value.ctnType}"/></td>
+			<td><c:out value="${ctn.value.intlcode}"/></td>
+			<td><c:out value="${ctn.value.ctnQty}"/></td>
+			<td><c:out value="${ctn.value.depotCode}"/></td>
+			<td><fmt:formatDate value="${ctn.value.reserveDate}" pattern="${dateFormat}"/></td>
+			<td><fmt:formatDate value="${ctn.value.pickupDate}" pattern="${dateFormat}"/></td>
+			</tr>
+		</c:when>
+	</c:choose>
+	</c:forEach>
+
+	</table>
+		<html:form action="/setBookingCtn" styleClass="SetForm" method="post">
+			<%SetBookingCtnForm sForm=(SetBookingCtnForm)request.getAttribute("setBookingCtnForm");
+			int ctnCount=sForm.getRowIdList().size();
+			%>
+			<input type="hidden" name="ctnCount" value="<%=ctnCount%>"/>
+			<table id="ctntable">
+			<tr>
+				<th><input type="checkbox" id="allchecks" onclick="allChecks(this)" checked="checked"/></th>
+				<th><fmt:message key="booking.container.ctncode.displayname"/></th>
+				<th><fmt:message key="booking.container.intlcode.displayname"/></th>				
+				<th><fmt:message key="booking.container.ctnqty.displayname"/></th>
+				<th><fmt:message key="booking.container.depotcode.displayname"/></th>
+				<th></th>
+			</tr>
+			<c:forEach items="${setBookingCtnForm.rowIdList}" var="row" varStatus="status">
+			<tr>
+				<td><html:checkbox property="attribute(${row}_checked)"/></td>
+				<td><html:text property="attribute(${row}_ctnCode)"  maxlength="10" size="8" readonly="true" styleClass="inputbox"/></td>
+				<td><html:text property="attribute(${row}_intlCode)" maxlength="10" size="5" readonly="true" styleClass="inputbox"/></td>
+				<td><html:text property="attribute(${row}_ctnQty)" size="5" maxlength="9" styleClass="inputbox"/></td>
+				<td><html:select property="attribute(${row}_depotCode)">
+					<html:options collection="localdepots" labelProperty="key" property="key"/>
+					</html:select>
+				</td>
+				<td><html:errors property="${row}" /></td>
+			</tr>
+			</c:forEach>
+			</table>
+			<br/>
+
+
+			<select id="depotCodeSelect" style="visibility:hidden">
+				<c:forEach items="${localdepots}" var="depot">
+					<option value="${depot.key}">${depot.key}</option>
+				</c:forEach>
+			</select>
+			<html:errors property="error"/><br/><br/><br/><br/>
+			<input type="hidden" name="confirmStr" value="<fmt:message key="function.confirm.displayname"/>"/>
+			<html:submit styleClass="button" onclick="if(!fnSubmit()){return false;}"><fmt:message key="button.submit.displayname"/></html:submit><html:cancel styleClass="button"><fmt:message key="button.cancel.displayname"/></html:cancel>
+		</html:form>
+</td>
+</tr>
+</table>

@@ -1,0 +1,208 @@
+.ms-main {
+}
+.ms-bannerframe {
+	PADDING-RIGHT: 14px; BACKGROUND-IMAGE: url(../images/mainlabel.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #4e7dd1
+}
+.ms-banner A:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: Verdana, serif; TEXT-DECORATION: none
+}
+.ms-banner A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: Verdana, serif; TEXT-DECORATION: none
+}
+.ms-banner {
+	FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: verdana
+}
+.ms-phnav1wrapper {
+	BORDER-TOP: #7795cb 1px solid; BACKGROUND-IMAGE: url(../image/headlabel.gif); WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #00248c
+}
+.ms-navframe {
+	BACKGROUND-IMAGE: url(../image/vlabel.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #fbfbfd
+}
+.ms-phnavtableone {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 5px; PADDING-TOP: 3px
+}
+.ms-phnavtableone A {
+	FONT-WEIGHT: bold; FONT-SIZE: 70%; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+.ms-phnavtableone A:hover {
+	TEXT-DECORATION: underline
+}
+.ms-phnavmidc1 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 2px; PADDING-TOP: 1px
+}
+TD.ms-titleareaframe {
+	COLOR: black
+}
+DIV.ms-titleareaframe {
+	BORDER-TOP: #ffd275 3px solid
+}
+
+.ms-titlearealine {//
+	BACKGROUND-COLOR: #d8e0eb
+}
+.ms-pvnav {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 4px; MARGIN-RIGHT: 0px
+}
+.Ms-pvnavtableone1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 6px
+}
+.ms-navheader A {
+	FONT-WEIGHT: bold
+}
+.ms-navheader A:link {
+	FONT-WEIGHT: bold
+}
+.ms-navheader A:visited {
+	FONT-WEIGHT: bold
+}
+.ms-pvnavmidC1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; COLOR: #000000; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: Verdana; TEXT-ALIGN: left
+}
+.ms-pvnavmidC1 A:link {
+	OVERFLOW: hidden; WIDTH: 100px; COLOR: #003399; TEXT-OVERFLOW: ellipsis; TEXT-DECORATION: none
+}
+.ms-pvnavmidC1 A:visited {
+	OVERFLOW: hidden; WIDTH: 100px; COLOR: #003399; TEXT-OVERFLOW: ellipsis; TEXT-DECORATION: none
+}
+.ms-pvnavmidC1 A:hover {
+	COLOR: #003399; TEXT-DECORATION: underline
+}
+
+.ms-smallheader {
+	COLOR: #000000
+}
+.ms-tabselected {
+	COLOR: #ffffff
+}
+.ms-stylelabel {
+	COLOR: #c0c0c0
+}
+.ms-alternating {
+	BACKGROUND-COLOR: #ecf4fe
+}
+.ms-spaceBetContentAndButton {
+	HEIGHT: 10px
+}
+.ms-ButtonHeightWidth {
+	WIDTH: 100px; HEIGHT: 24px
+}
+.ms-SpaceBetButtons {
+	WIDTH: 10px
+}
+.ms-summarycustombody {
+	MARGIN-TOP: 5px; MARGIN-LEFT: 6px; MARGIN-RIGHT: 6px
+}
+.ms-summarystandardbody {
+	MARGIN-TOP: 5px; MARGIN-LEFT: 2px; MARGIN-RIGHT: 6px
+}
+.ms-custhdr {
+	DISPLAY: none
+}
+.ms-sitehdr {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: left center; PADDING-LEFT: 5px; BACKGROUND-IMAGE: url(/_layouts/images/sitehdr.gif); PADDING-BOTTOM: 4px; WIDTH: 100%; PADDING-TOP: 4px; BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #646464
+}
+.ms-farmhdr {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: left center; PADDING-LEFT: 5px; BACKGROUND-IMAGE: url(/_layouts/images/sitehdr.gif); PADDING-BOTTOM: 4px; WIDTH: 100%; PADDING-TOP: 4px; BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #646464
+}
+.ms-vspacer {
+	BORDER-RIGHT: #d4dce6 1px solid; PADDING-RIGHT: 9px; PADDING-LEFT: 7px; FONT-SIZE: 8pt; WIDTH: 124px; FONT-FAMILY: Verdana, sans-serif
+}
+.ms-vspacer A {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #003399; FONT-FAMILY: Verdana, sans-serif; TEXT-DECORATION: none
+}
+.ms-colspace {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 0px
+}
+.ms-formwidth {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 8px; WIDTH: 400px; PADDING-TOP: 0px
+}
+.ms-formspacer {
+	WIDTH: 20px; HEIGHT: 5px
+}
+.ms-errorinl {
+	FONT-SIZE: 8pt; COLOR: #ff0000; FONT-FAMILY: verdana, sans-serif
+}
+.ms-ptable1 {
+	BORDER-RIGHT: #e1e1e1 1px solid; PADDING-RIGHT: 12px; BORDER-TOP: #e1e1e1 1px solid; PADDING-LEFT: 12px; PADDING-BOTTOM: 15px; BORDER-LEFT: #e1e1e1 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #e1e1e1 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.ms-ptable2 {
+	BORDER-RIGHT: #efefef 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #efefef 1px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 15px; BORDER-LEFT: #efefef 1px solid; PADDING-TOP: 12px; BORDER-BOTTOM: #efefef 1px solid
+}
+.ms-ptabarea {
+	MARGIN-TOP: 4px
+}
+.ms-ptabln {
+	BACKGROUND-IMAGE: url(/_layouts/images/tablnk.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #ffffff
+}
+.ms-ptablnb {
+	
+}
+.ms-ptablf {
+	BACKGROUND-IMAGE: url(/_layouts/images/tablfk.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #ffffff
+}
+.ms-ptablfb {
+	
+}
+.ms-ptabmff {
+	BACKGROUND-IMAGE: url(/_layouts/images/tabmffk.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #ffffff
+}
+.ms-ptabmffb {
+	
+}
+.ms-ptabmfn {
+	BACKGROUND-IMAGE: url(/_layouts/images/tabmfnk.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #ffffff
+}
+.ms-ptabmfnb {
+	
+}
+.ms-ptabmnf {
+	BACKGROUND-IMAGE: url(/_layouts/images/tabmnfk.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #ffffff
+}
+.ms-ptabmnfb {
+	
+}
+.ms-ptabrn {
+	BACKGROUND-IMAGE: url(/_layouts/images/tabrnk.gif); BACKGROUND-REPEAT: repeat-y
+}
+.ms-ptabrnb {
+	
+}
+.ms-ptabrf {
+	BACKGROUND-IMAGE: url(/_layouts/images/tabrfk.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #ffffff
+}
+.ms-ptabrfb {
+	
+}
+.ms-ptabcn {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #b4b4b4 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 0.7em; PADDING-BOTTOM: 4px; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffff 0px solid; COLOR: #000000; PADDING-TOP: 1px; BORDER-BOTTOM: #ffffff 0px solid; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.ms-ptabcn A:link {
+	COLOR: #595959; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.ms-ptabon A:visited {
+	COLOR: #595959; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.ms-ptabcn A:hover {
+	COLOR: #ff0000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.ms-ptabcnb {
+	BACKGROUND-COLOR: #ffffff
+}
+.ms-ptabcf {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #b4b4b4 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 0.7em; PADDING-BOTTOM: 4px; VERTICAL-ALIGN: middle; BORDER-LEFT: #ffffff 0px solid; COLOR: #000000; PADDING-TOP: 1px; BORDER-BOTTOM: #ffffff 0px solid; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica; BACKGROUND-COLOR: #d9e3e6; TEXT-ALIGN: left
+}
+.ms-ptabcf A:link {
+	COLOR: #595959; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.ms-ptaboff A:visited {
+	COLOR: #595959; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.ms-ptabcf A:hover {
+	COLOR: #ff0000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.ms-ptabcfb {
+	BACKGROUND-COLOR: #b4b4b4
+}
+.ms-phnav1wrapper {
+	BORDER-TOP: #7795cb 1px solid; BACKGROUND-IMAGE: url(../image/headlabel.gif); WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #00248c
+}

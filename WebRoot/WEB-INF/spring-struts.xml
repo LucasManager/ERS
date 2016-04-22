@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+<import resource="spring-db.xml"/>
+<!-- 分配堆场 -->
+	<bean name="/distributionDepot" class="com.apl.sha.ers.struts.action.DistributionDepotAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/userLogin" class="com.apl.sha.ers.struts.action.UserLoginAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/userLogout" class="com.apl.sha.ers.struts.action.UserLogoutAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getBooking" class="com.apl.sha.ers.struts.action.GetBookingAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/GetCtnRelease" class="com.apl.sha.ers.struts.action.GetCtnReleaseAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getDepot" class="com.apl.sha.ers.struts.action.GetDepotAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getDepots" class="com.apl.sha.ers.struts.action.GetDepotsAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setBookingInfo" class="com.apl.sha.ers.struts.action.SetBookingInfoAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setDepot" class="com.apl.sha.ers.struts.action.SetDepotAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>	
+	<bean name="/getCtnReport" class="com.apl.sha.ers.struts.action.GetCtnReportAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>	
+	<bean name="/getPendingCtn" class="com.apl.sha.ers.struts.action.GetPendingCtnAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>	
+	<bean name="/initSetDepot" class="com.apl.sha.ers.struts.action.InitSetDepotAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setDepotCtn" class="com.apl.sha.ers.struts.action.SetDepotCtnAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/initSetDepotCtn" class="com.apl.sha.ers.struts.action.InitSetDepotCtnAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setAccount" class="com.apl.sha.ers.struts.action.SetAccountAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/initSetAccount" class="com.apl.sha.ers.struts.action.InitSetAccountAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getBookingCtn" class="com.apl.sha.ers.struts.action.GetBookingCtnAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setBookingCtnStatus" class="com.apl.sha.ers.struts.action.SetBookingCtnStatusAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setBookingCtn" class="com.apl.sha.ers.struts.action.SetBookingCtnAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getBookings" class="com.apl.sha.ers.struts.action.GetBookingsAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getBookingCtnGroups" class="com.apl.sha.ers.struts.action.GetBookingCtnGroupsAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getDepotsCtns" class="com.apl.sha.ers.struts.action.GetDepotsCtnsAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setBookingStatus" class="com.apl.sha.ers.struts.action.SetBookingStatusAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getAccount" class="com.apl.sha.ers.struts.action.GetAccountAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/adminAccount" class="com.apl.sha.ers.struts.action.AdminAccountAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getLogs" class="com.apl.sha.ers.struts.action.GetLogsAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/delBooking" class="com.apl.sha.ers.struts.action.DelBookingAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setOverdueCtn" class="com.apl.sha.ers.struts.action.SetOverdueCtnAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/refreshCache" class="com.apl.sha.ers.struts.action.RefreshCacheAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setVessel" class="com.apl.sha.ers.struts.action.SetVesselAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setVslVoy" class="com.apl.sha.ers.struts.action.SetVslVoyAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setBookingCtnType" class="com.apl.sha.ers.struts.action.SetBookingCtnTypeAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/adminBulletin" class="com.apl.sha.ers.struts.action.AdminBulletinAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getOneWayCtns" class="com.apl.sha.ers.struts.action.GetOneWayCtnsAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getIvoyEvoyMap" class="com.apl.sha.ers.struts.action.GetIvoyEvoyMapAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/getBlockCodeUpdate" class="com.apl.sha.ers.struts.action.GetBlockCodeUpdateAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+    <bean name="/getSVCNameMap" class="com.apl.sha.ers.struts.action.GetSVCNameMapAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setVessel" class="com.apl.sha.ers.struts.action.SetVesselAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setIvoyEvoyMap" class="com.apl.sha.ers.struts.action.SetIvoyEvoyMapAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+    <bean name="/setBlockCodeUpdate" class="com.apl.sha.ers.struts.action.SetBlockCodeUpdateAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setSVCNameMap" class="com.apl.sha.ers.struts.action.SetSVCNameMapAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setCtnStatusforAmend" class="com.apl.sha.ers.struts.action.SetCtnStatusforAmendAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/setOneWayCtn" class="com.apl.sha.ers.struts.action.SetOneWayCtnAction">
+		<property name="process"><ref bean="processingProxy"/> </property>
+	</bean>
+	<bean name="/test" class="com.apl.sha.ers.struts.action.TestAction">
+	</bean>
+</beans>

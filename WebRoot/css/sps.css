@@ -1,0 +1,177 @@
+INPUT {
+	FONT-SIZE: 8pt
+}
+.ms-input {
+	FONT-FAMILY: Verdana, sans-serif
+}
+TABLE.ms-toolbar {
+	BORDER-RIGHT: #dce3eb 1px solid; BORDER-TOP: #dce3eb 1px solid; BACKGROUND-IMAGE: url(/_layouts/images/toolgradp.gif); BORDER-LEFT: #dce3eb 1px solid; BORDER-BOTTOM: #dce3eb 1px solid; BACKGROUND-COLOR: #dce3eb
+}
+.ms-GRHeaderBackground {
+	BACKGROUND-IMAGE: none
+}
+.ms-storMeFree {
+	BACKGROUND-IMAGE: none
+}
+.ms-navframe {
+	BACKGROUND-IMAGE: url(../image/vlabel.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #fbfbfd
+}
+.ms-GRStatusBar {
+	BACKGROUND-IMAGE: url(../image/vlabel.gif); BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #fbfbfd
+}
+.ms-navwatermark {
+	COLOR: #caced5
+}
+.ms-navwatermarktext {
+	WIDTH: 139pt; HEIGHT: 17.25pt; rotation: -90
+}
+.ms-selectednav {
+	BORDER-RIGHT: #b0c0d0 1px solid; BORDER-TOP: #b0c0d0 1px solid; PADDING-BOTTOM: 4px; MARGIN-LEFT: 0px; BORDER-LEFT: #b0c0d0 1px solid; WIDTH: 100%; COLOR: #000000; MARGIN-RIGHT: 4px; PADDING-TOP: 2px; BORDER-BOTTOM: #b0c0d0 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.ms-GRSortFilter {
+	BORDER-RIGHT: #b0c0d0 1px solid; BORDER-TOP: #b0c0d0 1px solid; PADDING-BOTTOM: 4px; MARGIN-LEFT: 0px; BORDER-LEFT: #b0c0d0 1px solid; WIDTH: 100%; COLOR: #000000; MARGIN-RIGHT: 4px; PADDING-TOP: 2px; BORDER-BOTTOM: #b0c0d0 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.ms-selectednav A {
+	OVERFLOW: hidden; TEXT-OVERFLOW: ellipsis
+}
+.ms-GRSortFilter A {
+	OVERFLOW: hidden; TEXT-OVERFLOW: ellipsis
+}
+.ms-unselectednav {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; PADDING-BOTTOM: 4px; BORDER-LEFT: medium none; WIDTH: 100%; PADDING-TOP: 1px; BORDER-BOTTOM: medium none
+}
+.ms-unselectednav A:link {
+	OVERFLOW: hidden; WIDTH: 100px; COLOR: #003399; TEXT-OVERFLOW: ellipsis
+}
+.ms-unselectednav A:visited {
+	OVERFLOW: hidden; WIDTH: 100px; COLOR: #003399; TEXT-OVERFLOW: ellipsis
+}
+.ms-titlearealine {
+	BACKGROUND-COLOR: #d8e0eb
+}
+.ms-WPBorder {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.ms-phnav1wrapper {
+	BORDER-TOP: #7795cb 1px solid; BACKGROUND-IMAGE: url(../image/headlabel.gif); WIDTH: 100%; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #00248c
+}
+.ms-phnavtableone {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 5px; PADDING-TOP: 3px
+}
+.ms-phnavtableone A {
+	FONT-WEIGHT: bold; FONT-SIZE: 70%; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+.ms-phnavtableone A:hover {
+	TEXT-DECORATION: underline
+}
+.ms-phnavmidc1 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 2px; PADDING-TOP: 1px
+}
+.ms-phnavmidc0 {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 2px; PADDING-TOP: 1px
+}
+.ms-phnavmidc1sel {
+	BORDER-RIGHT: #578ceb 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #00238b 1px solid; PADDING-LEFT: 8px; PADDING-BOTTOM: 2px; BORDER-LEFT: #00238b 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #578ceb 1px solid; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: white;
+}
+.ms-phnavmidc0sel {
+	BORDER-RIGHT: #578ceb 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #00238b 1px solid; PADDING-LEFT: 8px; BACKGROUND-IMAGE: url(../image/mainlabel.gif); PADDING-BOTTOM: 2px; BORDER-LEFT: #00238b 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #578ceb 1px solid; BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #5284de
+}
+.ms-phnavmidc1sel A {
+	FONT-WEIGHT: bold; FONT-SIZE: 70%; COLOR: #131fa5; FONT-STYLE: normal; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+.ms-phnavmidc0sel A {
+	FONT-WEIGHT: bold; FONT-SIZE: 70%; COLOR: #131fa5; FONT-STYLE: normal; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+.ms-phnavmidc1sel A:hover {
+	TEXT-DECORATION: underline
+}
+.ms-phnavmidc0sel A:hover {
+	TEXT-DECORATION: underline
+}
+.ms-phnavtopl1sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-phnavtopr1sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-phnavbotl1sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-phnavbotr1sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-phnavtopl0sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-phnavtopr0sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-phnavbotl0sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-phnavbotr0sel {
+	WIDTH: 2px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 2px
+}
+.ms-pvnav {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 4px; MARGIN-RIGHT: 0px
+}
+.Ms-pvnavtableone1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 6px
+}
+.ms-navheader {
+	BACKGROUND-POSITION: left bottom; FONT-WEIGHT: bold; FONT-SIZE: 8pt; BACKGROUND-IMAGE: url(/_layouts/images/dot_rule.gif); PADDING-BOTTOM: 2px; COLOR: black; PADDING-TOP: 5px; BACKGROUND-REPEAT: repeat-x; FONT-FAMILY: Verdana, sans-serif; TEXT-ALIGN: left
+}
+.ms-pvnavmidL1 {
+	PADDING-RIGHT: 17px; BACKGROUND-POSITION: left top; PADDING-LEFT: 0px; BACKGROUND-IMAGE: url(/_layouts/images/vnavicon.gif); PADDING-BOTTOM: 0px; WIDTH: 1px; BACKGROUND-REPEAT: no-repeat
+}
+.ms-pvnavmidC1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; COLOR: #000000; PADDING-TOP: 1px; FONT-STYLE: normal; FONT-FAMILY: Verdana; TEXT-ALIGN: left
+}
+.ms-pvnavmidC1 A:link {
+	OVERFLOW: hidden; WIDTH: 100px; COLOR: #003399; TEXT-OVERFLOW: ellipsis; TEXT-DECORATION: none
+}
+.ms-pvnavmidC1 A:visited {
+	OVERFLOW: hidden; WIDTH: 100px; COLOR: #003399; TEXT-OVERFLOW: ellipsis; TEXT-DECORATION: none
+}
+.ms-pvnavmidC1 A:hover {
+	COLOR: #003399; TEXT-DECORATION: underline
+}
+.Ms-pvnavmidr1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 0px; PADDING-TOP: 0px
+}
+.Ms-pvnavtopr1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 0px; PADDING-TOP: 0px
+}
+.Ms-pvnavbotr1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 0px; PADDING-TOP: 0px
+}
+.ms-pvtb {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; MARGIN-LEFT: 4px; COLOR: #999999; MARGIN-RIGHT: 0px; FONT-STYLE: normal; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+.ms-pvtb A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-pvtb A:visited {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-pvtb A:hover {
+	TEXT-DECORATION: underline
+}
+.ms-pvtbt {
+	PADDING-RIGHT: 6px; BACKGROUND-POSITION: left bottom; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 0.7em; BACKGROUND-IMAGE: url(/_layouts/images/dot_rule.gif); PADDING-BOTTOM: 2px; COLOR: #000000; PADDING-TOP: 12px; BACKGROUND-REPEAT: repeat-x
+}
+.ms-pvtbicon {
+	PADDING-RIGHT: 10px; BACKGROUND-POSITION: left top; PADDING-LEFT: 0px; BACKGROUND-IMAGE: url(/_layouts/images/rtbullet.gif); WIDTH: 1px; PADDING-TOP: 5px; BACKGROUND-REPEAT: no-repeat
+}
+.ms-pvtbbutton {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 0.7em; PADDING-BOTTOM: 4px; VERTICAL-ALIGN: top; COLOR: #003399; PADDING-TOP: 2px; FONT-STYLE: normal; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+.ms-pvtbbutton A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-pvtbbutton A:visited {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-pvtbbutton A:hover {
+	TEXT-DECORATION: underline
+}

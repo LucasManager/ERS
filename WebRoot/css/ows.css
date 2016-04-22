@@ -1,0 +1,277 @@
+BODY {
+	MARGIN: 0px
+}
+FORM {
+	MARGIN: 0px
+}
+BODY {
+	BACKGROUND: white; COLOR: black; FONT-FAMILY: ËÎÌו;
+}
+.ms-main {
+	
+}
+SELECT {
+	FONT-SIZE: 8pt; FONT-FAMILY: ËÎÌו;
+}
+HR {
+	COLOR: #003399; HEIGHT: 2px
+}
+.ms-formlabel {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.7em; COLOR: #808080; FONT-FAMILY: verdana; TEXT-ALIGN: left
+}
+.ms-formdescription A {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-formtable .ms-formbody {
+	LINE-HEIGHT: 1.3em
+}
+.ms-bannerframe {
+	PADDING-RIGHT: 14px; BACKGROUND-IMAGE: url(../images/mainlabel.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #4e7dd1
+}
+.ms-GRHeaderBackground {
+	BACKGROUND-IMAGE: url(../images/mainlabel.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #002d96
+}
+.ms-storMeFree {
+	BACKGROUND-IMAGE: url(../images/mainlabel.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #002d96
+}
+.ms-banner A:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: Verdana, serif; TEXT-DECORATION: none
+}
+.ms-banner A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: Verdana, serif; TEXT-DECORATION: none
+}
+.ms-banner {
+	FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: verdana
+}
+.ms-GRHeaderText {
+	FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: verdana
+}
+.ms-nav TD {
+	FONT-SIZE: 8pt; FONT-FAMILY: Verdana, sans-serif
+}
+.ms-nav .ms-SPZoneLabel {
+	FONT-SIZE: 8pt; FONT-FAMILY: Verdana, sans-serif
+}
+.ms-input {
+	FONT-SIZE: 8pt; FONT-FAMILY: Verdana, sans-serif
+}
+.ms-nav TH {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Verdana, sans-serif; TEXT-ALIGN: left
+}
+.ms-navheader A {
+	FONT-WEIGHT: bold
+}
+.ms-navheader A:link {
+	FONT-WEIGHT: bold
+}
+.ms-navheader A:visited {
+	FONT-WEIGHT: bold
+}
+.ms-navframe1 {
+	BORDER-RIGHT: medium none; BACKGROUND: #e1ecfc; BORDER-LEFT: 0px
+}
+.ms-GRStatusBar {
+	BORDER-RIGHT: medium none; BACKGROUND: #e1ecfc; BORDER-LEFT: 0px
+}
+.ms-storMeUsed {
+	BACKGROUND: #91b5f4
+}
+.ms-storMeFilterBar {
+	BACKGROUND: #91b5f4
+}
+.ms-navline {
+	BORDER-BOTTOM: #adadad 1px solid
+}
+.ms-navwatermark {
+	COLOR: #cbd8f8
+}
+.ms-selectednav {
+	BORDER-RIGHT: #2254b1 1px solid; BORDER-TOP: #2254b1 1px solid; BACKGROUND: #fee197; PADDING-BOTTOM: 2px; BORDER-LEFT: #2254b1 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #2254b1 1px solid
+}
+.ms-GRSortFilter {
+	BORDER-RIGHT: #2254b1 1px solid; BORDER-TOP: #2254b1 1px solid; BACKGROUND: #fee197; PADDING-BOTTOM: 2px; BORDER-LEFT: #2254b1 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #2254b1 1px solid
+}
+.ms-unselectednav {
+	BORDER-RIGHT: #e1ecfc 1px solid; BORDER-TOP: #e1ecfc 1px solid; PADDING-BOTTOM: 2px; BORDER-LEFT: #e1ecfc 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #e1ecfc 1px solid
+}
+.ms-verticaldots {
+	BORDER-RIGHT: #d4dce6 1px solid; BORDER-LEFT: medium none
+}
+.ms-nav A {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #003399; FONT-FAMILY: Verdana, sans-serif; TEXT-DECORATION: none
+}
+.ms-nav A:link {
+	
+}
+.ms-nav A:hover {
+	COLOR: #798073; TEXT-DECORATION: underline
+}
+.ms-nav A:visited {
+	COLOR: #003399
+}
+.ms-titlearea {
+	FONT-SIZE: 9pt; FONT-FAMILY: verdana
+}
+TD.ms-titleareaframe {
+	COLOR: black
+}
+DIV.ms-titleareaframe {
+	BORDER-TOP: #4e7dd1 3px solid
+}
+.ms-titlearealine {
+	BACKGROUND-COLOR: #ffd275
+}
+.ms-storMeEstimated {
+	BACKGROUND-COLOR: #ffd275
+}
+.ms-bodyareaframe {
+	VERTICAL-ALIGN: top; HEIGHT: 100%
+}
+.ms-pagetitle {
+	FONT-WEIGHT: normal; FONT-SIZE: 14pt; COLOR: black; FONT-FAMILY: arial
+}
+.ms-pagetitle A {
+	COLOR: black; TEXT-DECORATION: none
+}
+.ms-pagetitle A:hover {
+	TEXT-DECORATION: underline
+}
+.ms-pagecaption {
+	FONT-SIZE: 9pt; COLOR: black; FONT-FAMILY: arial, verdana, sans-serif
+}
+.ms-selected {
+	COLOR: white; BACKGROUND-COLOR: #2254b1
+}
+.ms-selected SPAN {
+	COLOR: white
+}
+.ms-selectedtitle {
+	BORDER-RIGHT: #2254b1 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #2254b1 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #2254b1 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #2254b1 1px solid; BACKGROUND-COLOR: #fafafa
+}
+.ms-unselectedtitle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 1px; PADDING-TOP: 1px
+}
+.ms-itemheader A {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #003399; FONT-FAMILY: arial; TEXT-DECORATION: none
+}
+.ms-homepagetitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: black; FONT-FAMILY: arial; TEXT-DECORATION: none
+}
+.ms-TPBorder {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+.ms-TPHeader {
+	BACKGROUND-COLOR: #cbdbf8
+}
+.ms-TPTitle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 4px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; COLOR: midnightblue; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.ms-TPBody {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.ms-TPBody A:link {
+	CURSOR: hand; COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-TPBody A:visited {
+	CURSOR: hand; COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-TPBody A:hover {
+	CURSOR: hand; COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-TPCommands {
+	
+}
+.ms-TPInput {
+	FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.ms-WPDesign {
+	BACKGROUND-COLOR: #c1ccde
+}
+.ms-WPMenu {
+	BACKGROUND-COLOR: #c1ccde
+}
+.ms-WPTitle {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 6px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; COLOR: #003399; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.ms-WPTitle A:link {
+	CURSOR: hand; COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-WPTitle A:visited {
+	CURSOR: hand; COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-WPTitle A:hover {
+	CURSOR: hand; COLOR: red; TEXT-DECORATION: underline
+}
+.ms-WPSelected {
+	BORDER-RIGHT: #f4c660 3px dashed; BORDER-TOP: #f4c660 3px dashed; BORDER-LEFT: #f4c660 3px dashed; BORDER-BOTTOM: #f4c660 3px dashed
+}
+.ms-WPBody {
+	FONT-SIZE: 8pt; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.ms-WPBody TABLE {
+	FONT-SIZE: 1em
+}
+.ms-TPBody TABLE {
+	FONT-SIZE: 1em
+}
+.ms-WPBody A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-WPBody A:visited {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.ms-WPBody A:hover {
+	COLOR: red; TEXT-DECORATION: underline
+}
+.ms-WPBody TH {
+	FONT-WEIGHT: bold
+}
+.ms-TPBody TH {
+	FONT-WEIGHT: bold
+}
+.ms-WPBody TD {
+	FONT-SIZE: 8pt; FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+.ms-WPBody H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 200%
+}
+.ms-TPBody H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 200%
+}
+.ms-WPBody H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 150%
+}
+.ms-TPBody H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 150%
+}
+.ms-WPBody H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 120%
+}
+.ms-TPBody H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 120%
+}
+.ms-WPBody H4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%
+}
+.ms-TPBody H4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 100%
+}
+.ms-WPBody H5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 80%
+}
+.ms-TPBody H5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 80%
+}
+.ms-WPBody H6 {
+	FONT-WEIGHT: bold; FONT-SIZE: 65%
+}
+.ms-TPBody H6 {
+	FONT-WEIGHT: bold; FONT-SIZE: 65%
+}
+.ms-WPBorder {
+	BORDER-RIGHT: #afc9ef 1px solid; BORDER-TOP: #afc9ef 0px solid; BORDER-LEFT: #afc9ef 1px solid; BORDER-BOTTOM: #afc9ef 1px solid
+}
+
+.ms-WPHeader {
+	BACKGROUND-IMAGE: url(../image/mainlabel.gif); BACKGROUND-REPEAT: repeat-x; BACKGROUND-COLOR: #b9d1f4
+}

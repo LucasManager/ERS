@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="userLoginForm" type="com.apl.sha.ers.struts.form.UserLoginForm" />
+    <form-bean name="setDepotForm" type="com.apl.sha.ers.struts.form.SetDepotForm" />
+    <form-bean name="setDepotCtnForm" type="com.apl.sha.ers.struts.form.SetDepotCtnForm" />
+    <form-bean name="setAccountForm" type="com.apl.sha.ers.struts.form.SetUserForm" />
+    <form-bean name="setBookingCtnForm" type="com.apl.sha.ers.struts.form.SetBookingCtnForm" />
+    <form-bean name="setVesselForm" type="com.apl.sha.ers.struts.form.SetVesselForm" />
+    <form-bean name="setVslVoyForm" type="com.apl.sha.ers.struts.form.SetVslVoyForm" />
+    <form-bean name="setBulletinForm" type="com.apl.sha.ers.struts.form.SetBulletinForm" />
+    <form-bean name="adminBulletinForm" type="com.apl.sha.ers.struts.form.AdminBulletinForm" />
+    <form-bean name="setIvoyEvoyMapForm" type="com.apl.sha.ers.struts.form.setIvoyEvoyMapForm" />
+    <form-bean name="setBlockCodeUpdateForm" type="com.apl.sha.ers.struts.form.setBlockCodeUpdateForm" />
+    <form-bean name="setSVCNameMapForm" type="com.apl.sha.ers.struts.form.setSVCNameMapForm" />
+    <form-bean name="setOneWayCtnForm" type="com.apl.sha.ers.struts.form.setOneWayCtnForm" />  
+    <form-bean name="getCtnReportForm" type="com.apl.sha.ers.struts.form.getCtnReportForm" />  
+    <form-bean name="getPendingCtnForm" type="com.apl.sha.ers.struts.form.getPendingCtnForm" /> 
+    <form-bean name="setNormalCheckForm" type="com.apl.sha.ers.struts.form.SetNormalCheckForm" />  
+    <form-bean name="setBookingInfoForm" type="com.apl.sha.ers.struts.form.SetBookingInfoForm" /> 
+<!--    <form-bean name="adminAccountForm" type="com.apl.sha.ers.struts.form.SetUserForm" />-->
+  </form-beans>
+
+  <global-exceptions />
+    <global-forwards >
+      <forward name="error" path="/error.jsp" redirect="false"/>
+      <forward name="home" path="/home.jsp" redirect="true"/>
+      <forward name="login" path="/userLogin.jsp" redirect="true"/>
+  </global-forwards>
+  <action-mappings >
+    <action
+      attribute="userLoginForm"
+      input="/userLogin.jsp"
+      name="userLoginForm"
+      path="/userLogin"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/userInit.jsp" />
+    </action>
+    <action path="/userLogout" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="exit" path="/userLogout.html" />
+      <forward name="logout" path="/index.jsp" />
+    </action>
+    <action path="/getBooking" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBooking.jsp" />
+      <forward name="showmessage" path="/home.jsp" />
+    </action>
+    <action
+      attribute="getCtnReportForm"
+      input="/depot.jsp"
+      name="getCtnReportForm"
+      path="/getCtnReport"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/depot.jsp" />
+    </action>
+    <action
+      attribute="getPendingCtnForm"
+      input="/depot.jsp"
+      name="getPendingCtnForm"
+      path="/getPendingCtn"
+	  validate="true"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getPendingCtn.jsp" />
+    </action>
+    <action
+      attribute="setNormalCheckForm"
+      input="/booking.jsp"
+      name="setNormalCheckForm"
+      path="/setCtnStatusforAmend"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/booking.jsp" />
+    </action>
+    <action path="/GetCtnRelease" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/GetCtnRelease.jsp" />
+    </action>
+    <action path="/getDepot" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getDepot.jsp" />
+    </action>
+    <action path="/getDepots" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getDepots.jsp" />
+    </action>
+    <action
+      attribute="setDepotForm"
+      input="/setDepot.jsp"
+      name="setDepotForm"
+      path="/setDepot"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getDepot.do" />
+    </action>
+    <action
+      attribute="setDepotForm"
+      validate="false"
+      name="setDepotForm"
+      path="/initSetDepot"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/setDepot.jsp" />
+    </action>
+    <action
+      attribute="setDepotCtnForm"
+      input="/setDepotCtn.jsp"
+      name="setDepotCtnForm"
+      path="/setDepotCtn"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getDepot.do" redirect="true"/>
+    </action>
+    <action
+      attribute="setDepotCtnForm"
+      name="setDepotCtnForm"
+      path="/initSetDepotCtn"
+      validate="false"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" >
+      <forward name="success" path="/setDepotCtn.jsp"></forward>
+    </action>
+    <action
+      attribute="setAccountForm"
+      input="/account.jsp"
+      name="setAccountForm"
+      path="/setAccount"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/userInit.jsp" />
+    </action>
+    <action
+      attribute="setAccountForm"
+      name="setAccountForm"
+      path="/initSetAccount"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward name="setAccount" path="/account.jsp" />
+      <forward name="adminAccount" path="/adminAccount.jsp"></forward>
+    </action>
+    <action path="/test" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/test.jsp" />
+    </action>
+    <action path="/getBookingCtn" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookingCtn.jsp"/>
+      <forward name="showmessage" path="/home.jsp"/>
+    </action>
+    <action 
+    	input="/getBookingCtn.jsp"
+    	path="/setBookingCtnStatus"
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookingCtn.do" />
+    </action>    
+       <!-- 分配堆场 -->
+   <action path="/distributionDepot" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookingCtn.do" />
+      
+    </action>
+    <action path="/setBookingStatus" 
+            input="/getBookingCtn.jsp"
+            type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookingCtn.do"/>
+    </action>
+    <action
+      attribute="setBookingCtnForm"
+      input="/setBookingCtn.jspf"
+      name="setBookingCtnForm"
+      path="/setBookingCtn"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookingCtn.do" />
+    </action>
+    <action path="/getBookings" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookings.jsp" />
+    </action>
+    <action path="/getBookingCtnGroups" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookingCtnGroups.jsp" />
+    </action>
+    <action path="/getDepotsCtns" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getDepotsCtns.jsp" />
+    </action>
+    <action path="/getAccount" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/adminAccount.jsp" />
+    </action>
+    <action
+      attribute="setAccountForm"
+      input="/adminAccount.jsp"
+      name="setAccountForm"
+      path="/adminAccount"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/adminAccount.jsp" />
+    </action>
+    <action 
+    	input="/adminSystem.jsp"
+    	scope="request"
+    	path="/getLogs" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/adminSystem.jsp" />
+    </action>
+    <action path="/delBooking" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/booking.jsp" />
+    </action>
+    <action path="/setOverdueCtn" 
+            input="/booking.jsp" 
+            type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/booking.jsp" />
+    </action>
+    <action path="/refreshCache" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/adminSystem.jsp" />
+    </action>
+    <action 
+    	attribute="setVesselForm"
+		input="/booking.jsp"
+		name="setVesselForm"
+		scope="request"
+		validate="true"
+    	path="/setVessel" 
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/booking.jsp" />
+    </action>
+    <action 
+    	attribute="setBookingInfoForm"
+		input="/booking.jsp"
+		name="setBookingInfoForm"
+		scope="request"
+		validate="true"
+    	path="/setBookingInfo" 
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/booking.jsp" />
+    </action>
+    <action 
+    	attribute="setVslVoyForm"
+		input="/booking.jsp"
+		name="setVslVoyForm"
+		scope="request"
+		validate="true"
+    	path="/setVslVoy" 
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/booking.jsp" />
+    </action>
+    <action 
+    	attribute="setBookingCtnForm"
+        input="/setBookingCtnType.jspf"
+        name="setBookingCtnForm"
+    	path="/setBookingCtnType"
+    	scope="request"
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBookingCtn.do" />
+    </action>
+    <action
+      attribute="adminBulletinForm"
+      input="/adminBulletin.jsp"
+      name="adminBulletinForm"
+      parameter="method"
+      path="/adminBulletin"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/adminBulletin.jsp" />
+      
+    </action>
+    <action path="/getOneWayCtns" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getOneWayCtns.jsp" />
+    </action>
+    <action path="/getIvoyEvoyMap" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getIvoyEvoyMap.jsp" />
+    </action>
+    <action path="/getBlockCodeUpdate" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBlockCodeUpdate.jsp" />
+    </action>
+    <action path="/getSVCNameMap" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getSVCNameMap.jsp" />
+    </action>
+    <action 
+    	path="/setOneWayCtn"
+    	input="/setOneWayCtn.jsp" 
+    	validate="true"
+    	scope="request"
+    	name="setOneWayCtnForm"
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="success"
+        path="/getOneWayCtns.do"
+        redirect="true" />
+    </action>
+    <action 
+    	attribute="setIvoyEvoyMapForm"
+		input="/setIvoyEvoyMap.jsp"
+		name="setIvoyEvoyMapForm"
+		scope="request"
+		validate="true"
+    	path="/setIvoyEvoyMap" 
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getIvoyEvoyMap.do" redirect="true" />
+    </action>
+	<action 
+    	attribute="setBlockCodeUpdateForm"
+		input="/setBlockCodeUpdate.jsp"
+		name="setBlockCodeUpdateForm"
+		scope="request"
+		validate="true"
+    	path="/setBlockCodeUpdate" 
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getBlockCodeUpdate.do" redirect="true" />
+    </action>	
+    <action 
+    	attribute="setSVCNameMapForm"
+		input="/setSVCNameMap.jsp"
+		name="setSVCNameMapForm"
+		scope="request"
+		validate="true"
+    	path="/setSVCNameMap" 
+    	type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/getSVCNameMap.do" redirect="true" />
+    </action>
+    
+  </action-mappings>
+
+  <message-resources parameter="com.apl.sha.ers.struts.ApplicationResources" />
+ <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+    <set-property property="contextConfigLocation" value="/WEB-INF/spring-struts.xml"/>
+ </plug-in>
+ <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validator.xml" />
+ </plug-in>
+</struts-config>
+

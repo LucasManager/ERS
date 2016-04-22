@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="bookingOrder"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="960"
+		 pageHeight="1080"
+		 columnWidth="900"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="blnumber" isForPrompting="true" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["E:\\studyarea\\ireport\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="returnLink" isForPrompting="false" class="java.lang.String"/>
+	<queryString><![CDATA[SELECT r1.ID, r1.blnumber,
+       DECODE (r1.hot_stow,
+               'Y', NVL (b1.block_code, r1.blockcode),
+               r1.blockcode
+              ) AS blockcode,
+       r1.referenceno, r1.bookingparty, r1.accountcode, r1.shippercode,
+       r1.shipper, r1.shippername, r1.consigneecode, r1.consignee,
+       r1.consigneename, r1.notifypartycode, r1.notifypartyname,
+       r1.alsonotifypartycode, r1.alsonotifypartyname1,
+       r1.alsonotifypartyname2, r1.commodity, r1.descriptionofgoods, r1.marks,
+       r1.placeofreceiptcode, r1.placeofreceipt, r1.portofloadingcode,
+       r1.portofloading, r1.portofdischargecode, r1.portofdischarge,
+       r1.placeofdeliverycode, r1.placeofdelivery, r1.vslvoyid, r1.vesselname,
+       r1.voyage, r1.onboarddate, r1.cargomodel, r1.shippingmodel,
+       r1.seawaybill, r1.expressbill, r1.showoceanfreight, r1.prepaidcollect,
+       r1.tradeterm, r1.PACKAGES, r1.kindofpackages, r1.descriptionofpackages,
+       r1.grossweight, r1.measurement, r1.packagesofcartons, r1.kindofcartons,
+       r1.messageconfirmdate, r1.bookingupload, r1.readyupload, r1.tempdefine,
+       r1.settemp, r1.maxtemp, r1.mintemp, r1.airrate, r1.receivetime,
+       r1.createtime, r1.uploadtime, r1.passedtime, r1.sendractime
+  FROM (SELECT a.ID, a.blnumber, a.blockcode, a.referenceno, a.bookingparty,
+               a.accountcode, a.shippercode, a.shipper, a.shippername,
+               consigneecode, consignee, consigneename, a.notifypartycode,
+               a.notifypartyname, a.alsonotifypartycode,
+               a.alsonotifypartyname1, a.alsonotifypartyname2, a.commodity,
+               a.descriptionofgoods, a.marks, a.placeofreceiptcode,
+               a.placeofreceipt, a.portofloadingcode, a.portofloading,
+               a.portofdischargecode, a.portofdischarge,
+               a.placeofdeliverycode, a.placeofdelivery,
+               NVL (m.rvslvoyid, a.vslvoyid) AS vslvoyid, a.vesselname,
+               a.voyage, a.onboarddate, a.cargomodel, a.shippingmodel,
+               a.seawaybill, a.expressbill, a.showoceanfreight,
+               a.prepaidcollect, a.tradeterm, a.PACKAGES, 
+               NVL2 (a.kindofpackages, a.kindofpackages|| ': ' || CHR(10), '')  as kindofpackages,
+               a.descriptionofpackages, a.grossweight, a.measurement,
+               a.packagesofcartons, a.kindofcartons, a.messageconfirmdate,
+               a.bookingupload, a.readyupload, a.tempdefine,
+               a.settemp || a.tempdefine AS settemp, a.maxtemp, a.mintemp,
+               a.airrate, b.receivetime, b.createtime, b.uploadtime,
+               b.passedtime, b.sendractime, a.hot_stow, v.svcname
+          FROM booking a,
+               bookingstatus b,
+               vessel v,
+               (SELECT v.vslcd || ' ' || v.external_voyid AS rvslvoyid,
+                       v.vslcd || ' ' || v.internal_voyid AS vslvoyid
+                  FROM vslcd_ivoy_evoy v
+                 WHERE v.status = 'Y') m
+         WHERE a.blnumber = $P{blnumber}
+           AND a.blnumber = b.blnumber
+           AND a.vslvoyid = m.vslvoyid(+)
+           AND SUBSTR (a.vslvoyid, 1, 3) = v.ID(+)) r1,
+       (SELECT svcname, portofloadingcode, block_code
+          FROM block_code_update
+         WHERE block_code_update.status = 'Y') b1
+ WHERE r1.svcname = b1.svcname(+) AND r1.portofloadingcode = b1.portofloadingcode(+)]]></queryString>
+
+	<field name="ID" class="java.math.BigDecimal"/>
+	<field name="BLNUMBER" class="java.lang.Integer"/>
+	<field name="BLOCKCODE" class="java.lang.String"/>
+	<field name="REFERENCENO" class="java.lang.String"/>
+	<field name="BOOKINGPARTY" class="java.lang.String"/>
+	<field name="ACCOUNTCODE" class="java.lang.String"/>
+	<field name="SHIPPERCODE" class="java.lang.String"/>
+	<field name="SHIPPER" class="java.lang.String"/>
+	<field name="SHIPPERNAME" class="java.lang.String"/>
+	<field name="CONSIGNEECODE" class="java.lang.String"/>
+	<field name="CONSIGNEE" class="java.lang.String"/>
+	<field name="CONSIGNEENAME" class="java.lang.String"/>
+	<field name="NOTIFYPARTYCODE" class="java.lang.String"/>
+	<field name="NOTIFYPARTYNAME" class="java.lang.String"/>
+	<field name="ALSONOTIFYPARTYCODE" class="java.lang.String"/>
+	<field name="ALSONOTIFYPARTYNAME1" class="java.lang.String"/>
+	<field name="ALSONOTIFYPARTYNAME2" class="java.lang.String"/>
+	<field name="COMMODITY" class="java.lang.String"/>
+	<field name="DESCRIPTIONOFGOODS" class="java.lang.String"/>
+	<field name="MARKS" class="java.lang.String"/>
+	<field name="PLACEOFRECEIPTCODE" class="java.lang.String"/>
+	<field name="PLACEOFRECEIPT" class="java.lang.String"/>
+	<field name="PORTOFLOADINGCODE" class="java.lang.String"/>
+	<field name="PORTOFLOADING" class="java.lang.String"/>
+	<field name="PORTOFDISCHARGECODE" class="java.lang.String"/>
+	<field name="PORTOFDISCHARGE" class="java.lang.String"/>
+	<field name="PLACEOFDELIVERYCODE" class="java.lang.String"/>
+	<field name="PLACEOFDELIVERY" class="java.lang.String"/>
+	<field name="VSLVOYID" class="java.lang.String"/>
+	<field name="VESSELNAME" class="java.lang.String"/>
+	<field name="VOYAGE" class="java.lang.String"/>
+	<field name="ONBOARDDATE" class="java.sql.Timestamp"/>
+	<field name="CARGOMODEL" class="java.lang.String"/>
+	<field name="SHIPPINGMODEL" class="java.lang.String"/>
+	<field name="SEAWAYBILL" class="java.math.BigDecimal"/>
+	<field name="EXPRESSBILL" class="java.math.BigDecimal"/>
+	<field name="SHOWOCEANFREIGHT" class="java.math.BigDecimal"/>
+	<field name="PREPAIDCOLLECT" class="java.lang.String"/>
+	<field name="TRADETERM" class="java.lang.String"/>
+	<field name="PACKAGES" class="java.math.BigDecimal"/>
+	<field name="KINDOFPACKAGES" class="java.lang.String"/>
+	<field name="DESCRIPTIONOFPACKAGES" class="java.lang.String"/>
+	<field name="GROSSWEIGHT" class="java.math.BigDecimal"/>
+	<field name="MEASUREMENT" class="java.math.BigDecimal"/>
+	<field name="PACKAGESOFCARTONS" class="java.lang.String"/>
+	<field name="KINDOFCARTONS" class="java.lang.String"/>
+	<field name="MESSAGECONFIRMDATE" class="java.sql.Timestamp"/>
+	<field name="BOOKINGUPLOAD" class="java.math.BigDecimal"/>
+	<field name="READYUPLOAD" class="java.math.BigDecimal"/>
+	<field name="TEMPDEFINE" class="java.lang.String"/>
+	<field name="SETTEMP" class="java.lang.String"/>
+	<field name="MAXTEMP" class="java.math.BigDecimal"/>
+	<field name="MINTEMP" class="java.math.BigDecimal"/>
+	<field name="AIRRATE" class="java.math.BigDecimal"/>
+	<field name="RECEIVETIME" class="java.sql.Timestamp"/>
+	<field name="CREATETIME" class="java.sql.Timestamp"/>
+	<field name="UPLOADTIME" class="java.sql.Timestamp"/>
+	<field name="PASSEDTIME" class="java.sql.Timestamp"/>
+	<field name="SENDRACTIME" class="java.sql.Timestamp"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="244"
+						y="8"
+						width="412"
+						height="37"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center">
+						<font fontName="宋体" size="24" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Booking Order]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="48"
+						width="900"
+						height="0"
+						key="line"
+						stretchType="RelativeToTallestObject"/>
+					<graphicElement stretchType="RelativeToTallestObject"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="3"
+						width="900"
+						height="0"
+						key="line"
+						stretchType="RelativeToTallestObject"/>
+					<graphicElement stretchType="RelativeToTallestObject"/>
+				</line>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5"
+						y="19"
+						width="106"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-18"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+				</textField>
+				<image  isUsingCache="true" evaluationTime="Now" hyperlinkType="Reference"  hyperlinkTarget="Self" >
+					<reportElement
+						x="178"
+						y="19"
+						width="20"
+						height="20"
+						key="image-3"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["http://localhost/ERS/image/go.gif"]]></imageExpression>
+						<hyperlinkReferenceExpression><![CDATA[$P{returnLink}]]></hyperlinkReferenceExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="114"
+						y="19"
+						width="61"
+						height="19"
+						key="staticText-23"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Return(返回)]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="10"  isSplitAllowed="true" >
+				<line direction="BottomUp">
+					<reportElement
+						x="0"
+						y="9"
+						width="900"
+						height="0"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="953"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="1"
+						y="2"
+						width="169"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Shipper(发货人)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="2"
+						y="17"
+						width="507"
+						height="72"
+						key="textField"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SHIPPERNAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="2"
+						y="91"
+						width="159"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-1"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Consignee(收货人)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="106"
+						width="507"
+						height="72"
+						key="textField-1"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CONSIGNEENAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="3"
+						y="180"
+						width="171"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-2"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Notify Party(通知人)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="196"
+						width="507"
+						height="72"
+						key="textField-2"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NOTIFYPARTYNAME}]]></textFieldExpression>
+				</textField>
+				<image  scaleImage="FillFrame" isUsingCache="true" evaluationTime="Now" hyperlinkType="LocalPage"  hyperlinkTarget="Self" >
+					<reportElement
+						x="679"
+						y="10"
+						width="200"
+						height="78"
+						key="image-1"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["http://localhost/ERS/image/apl_logo.gif"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="540"
+						y="2"
+						width="119"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-3"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Booking NO.(单号)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="540"
+						y="17"
+						width="121"
+						height="72"
+						key="textField-3"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{BLNUMBER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="2"
+						y="276"
+						width="250"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-4"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[PRE-CARRIAGE BY (前程运输)	
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="295"
+						width="250"
+						height="14"
+						key="textField-4"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="260"
+						y="276"
+						width="248"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-5"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Place of Receipt(收货地点)	
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="260"
+						y="295"
+						width="250"
+						height="14"
+						key="textField-5"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLACEOFRECEIPT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="2"
+						y="311"
+						width="120"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-6"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Vessel(船名)
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="331"
+						width="119"
+						height="14"
+						key="textField-6"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{VESSELNAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="128"
+						y="312"
+						width="120"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-7"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VOY. NO. (航次)
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="128"
+						y="331"
+						width="125"
+						height="14"
+						key="textField-7"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{VOYAGE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="515"
+						y="275"
+						width="192"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-8"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Port Of Loading(装货港)
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="515"
+						y="295"
+						width="250"
+						height="14"
+						key="textField-8"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PORTOFLOADING}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="260"
+						y="312"
+						width="206"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-9"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Port Of Discharge(卸货港)	
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="260"
+						y="331"
+						width="250"
+						height="14"
+						key="textField-9"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PORTOFDISCHARGE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="517"
+						y="312"
+						width="201"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-10"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Piece of Delivery(交货地点)
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="515"
+						y="331"
+						width="250"
+						height="14"
+						key="textField-10"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLACEOFDELIVERY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="365"
+						width="171"
+						height="14"
+						key="textField-11"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SHIPPINGMODEL}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="2"
+						y="348"
+						width="170"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-11"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Shipping Model(船运模式)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="455"
+						y="384"
+						width="404"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-12"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Kind of Packages: DESCRIPTION OF GOODS(包装种类与货名)
+(包装种类与货名)"	
+
+	
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="455"
+						y="402"
+						width="440"
+						height="400"
+						key="textField-12"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{KINDOFPACKAGES}+$F{DESCRIPTIONOFGOODS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="185"
+						y="365"
+						width="155"
+						height="14"
+						key="textField-13"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PACKAGES}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="185"
+						y="348"
+						width="154"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-13"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[No. of Packages(件数)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="352"
+						y="365"
+						width="159"
+						height="14"
+						key="textField-14"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{GROSSWEIGHT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="352"
+						y="348"
+						width="157"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-14"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Gross Weight(毛重:公斤)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="523"
+						y="365"
+						width="164"
+						height="14"
+						key="textField-15"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MEASUREMENT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="523"
+						y="348"
+						width="164"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-15"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Measurement(尺码:立方米)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="694"
+						y="365"
+						width="197"
+						height="14"
+						key="textField-16"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SETTEMP}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="693"
+						y="348"
+						width="199"
+						height="14"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-16"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Reffer Temperature(冷藏温度)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="402"
+						width="440"
+						height="400"
+						key="textField-17"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{MARKS}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="4"
+						y="384"
+						width="117"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-17"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Marks(标记)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="538"
+						y="110"
+						width="225"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-21"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Booking Status(订单状态)]]></text>
+				</staticText>
+				<subreport  isUsingCache="false">
+					<reportElement
+						x="6"
+						y="809"
+						width="890"
+						height="120"
+						key="subreport-1"/>
+					<subreportParameter  name="blnumber">
+						<subreportParameterExpression><![CDATA[$P{blnumber}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="REPORT_CONNECTION">
+						<subreportParameterExpression><![CDATA[$P{REPORT_CONNECTION}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"containerOrder.jasper"]]></subreportExpression>
+				</subreport>
+				<image  isUsingCache="true" evaluationTime="Now" hyperlinkType="Reference"  hyperlinkTarget="Self" >
+					<reportElement
+						x="767"
+						y="157"
+						width="20"
+						height="20"
+						key="image-2">
+							<printWhenExpression><![CDATA[new Boolean($F{PASSEDTIME}!=null)]]></printWhenExpression>
+						</reportElement>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["http://localhost/ERS/image/go.gif"]]></imageExpression>
+						<hyperlinkReferenceExpression><![CDATA["../getBookingCtn.do?blnumber="+($F{BLNUMBER}).toString()]]></hyperlinkReferenceExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="538"
+						y="161"
+						width="223"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-22"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{PASSEDTIME}!=null)]]></printWhenExpression>
+						</reportElement>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CTN Delivery List(集装箱分发单)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="538"
+						y="234"
+						width="192"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-24"
+						positionType="Float"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Block Code(舱位代码)
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="538"
+						y="254"
+						width="250"
+						height="14"
+						key="textField-21"/>
+					<box topBorder="Thin" topBorderColor="#000000" leftBorder="Thin" leftBorderColor="#000000" rightBorder="Thin" rightBorderColor="#000000" bottomBorder="Thin" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="Courier New" size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BLOCKCODE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="540"
+						y="135"
+						width="47"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-25"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{PASSEDTIME}!=null)]]></printWhenExpression>
+						</reportElement>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[已审核]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="540"
+						y="135"
+						width="47"
+						height="17"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-26"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{PASSEDTIME}==null)]]></printWhenExpression>
+						</reportElement>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font fontName="宋体" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[未审核]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="27"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="3"
+						width="900"
+						height="0"
+						key="line"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="4"
+						y="8"
+						width="308"
+						height="15"
+						key="staticText-18"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font isBold="true" isItalic="true"/>
+					</textElement>
+				<text><![CDATA[Copyright © 2007 APL Limited. All rights reserved.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="732"
+						y="8"
+						width="156"
+						height="16"
+						key="staticText-19"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement>
+						<font isItalic="true"/>
+					</textElement>
+				<text><![CDATA[Developed by APL Shanghai IT]]></text>
+				</staticText>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

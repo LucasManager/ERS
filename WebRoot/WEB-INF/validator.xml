@@ -1,0 +1,416 @@
+<!DOCTYPE form-validation PUBLIC
+"-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+"http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+<formset>
+<constant>
+	<constant-name>dateFormat</constant-name>
+	<constant-value>yyyy-MM-dd</constant-value>
+</constant>
+<constant>
+	<constant-name>pwdMinLength</constant-name>
+	<constant-value>8</constant-value>
+</constant>
+<constant>
+	<constant-name>pwdMaxLength</constant-name>
+	<constant-value>20</constant-value>
+</constant>
+<form name="userLoginForm">
+	<field property="username" depends="required">
+		<arg0 key="login.username"/>
+	</field>
+	<field property="password" depends="required">
+		<arg0 key="login.password"/>
+	</field>
+<!--	<field property="safecode" depends="required,maxlength">-->
+<!--		<arg0 key="login.safecode"/>-->
+<!--		<arg1 key="${var:maxlength}" resource="false"/>-->
+<!--		<var>-->
+<!--	  		<var-name>maxlength</var-name>-->
+<!--	  		<var-value>5</var-value>-->
+<!--  		</var>-->
+<!--	</field>-->
+</form>
+<form name="setDepotForm">
+	<field property="location" depends="required">
+		<arg0 key="depot.id.displayname"/>
+	</field>
+	<field property="depotcode" depends="required,maxlength">
+		<arg0 key="depot.depotcode.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+  		<var>
+	  		<var-name>maxlength</var-name>
+	  		<var-value>5</var-value>
+  		</var>
+	</field>
+	<field property="location" depends="required">
+		<arg0 key="depot.location.displayname"/>
+	</field>
+	<field property="email" depends="email">
+		<arg0 key="depot.email.displayname"/>
+	</field>
+</form>
+<form name="setAccountForm">
+	<field property="firstname" depends="maxlength">
+		<arg0 key="user.firstname.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+  		<var>
+	  		<var-name>maxlength</var-name>
+	  		<var-value>80</var-value>
+  		</var>
+	</field>
+	<field property="lastname" depends="maxlength">
+		<arg0 key="user.lastname.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+  		<var>
+	  		<var-name>maxlength</var-name>
+	  		<var-value>80</var-value>
+  		</var>
+	</field>
+	<field property="username" depends="required">
+		<arg0 key="user.username.displayname"/>
+	</field>
+	<field property="email" depends="email">
+		<arg0 key="user.email.displayname"/>
+	</field>
+	<field property="pwd" depends="required,mask">
+		<arg0 key="user.pwd.displayname"/>
+		<arg1 key="error.user.password.pattern"/>
+		<var>
+			<var-name>mask</var-name>
+			<var-value>[a-zA-z0-9]{8,16}</var-value>
+		</var>
+	</field>
+	<field property="cfmpwd" depends="identical">
+		<arg1 key="user.cfmpwd.displayname"/>
+		<arg0 key="user.pwd.displayname"/>
+		<var>
+			<var-name>fieldJoin</var-name>
+			<var-value>pwd</var-value>
+		</var>
+	</field>
+</form>
+<form name="setVesselForm">
+	<field property="id" depends="required,minlength,maxlength">
+	<arg0 key="vessel.id.displayname"/>
+	<arg1 key="${var:maxlength}" resource="false"/>
+	<arg2 key="${var:minlength}" resource="false"/>
+	<var>
+	  		<var-name>maxlength</var-name>
+	  		<var-value>3</var-value>
+	</var>
+	<var>
+	  		<var-name>minlength</var-name>
+	  		<var-value>3</var-value>
+	</var>
+	</field>
+	<field property="name" depends="required">
+		<arg0 key="vessel.name.displayname"/>
+	</field>
+	<field property="simpleName" depends="required">
+		<arg0 key="vessel.simplename.displayname"/>
+	</field>
+	<field property="svcname" depends="minlength,maxlength">
+	<arg0 key="vessel.svcname.displayname"/>
+	<arg1 key="${var:maxlength}" resource="false"/>
+	<arg2 key="${var:minlength}" resource="false"/>
+	<var>
+	  		<var-name>maxlength</var-name>
+	  		<var-value>3</var-value>
+	</var>
+	<var>
+	  		<var-name>minlength</var-name>
+	  		<var-value>3</var-value>
+	</var>
+	</field>
+</form>
+<form name="setIvoyEvoyMapForm">
+	<field property="vslcd" depends="required,maxlength,minlength">
+		<arg0 key="vessel.id.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	  </field>
+	  <field property="internal_voyid" depends="required,maxlength,minlength">
+		<arg0 key="booking.vslvoyid.ivoyid.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	  </field>
+	  <field property="external_voyid" depends="required,maxlength,minlength">
+		<arg0 key="booking.vslvoyid.evoyid.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>4</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	</field>
+</form>
+<form name="setSVCNameMapForm">
+	<field property="svcname" depends="required,maxlength,minlength">
+		<arg0 key="vessel.svcname.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	  </field>
+	  <field property="portofloadingcode" depends="required,maxlength,minlength">
+		<arg0 key="booking.portofloadingcode.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	  </field>
+	  <field property="placeofreturn" depends="required,maxlength">
+		<arg0 key="booking.Placeofreturn.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>5</var-value>
+	  	</var>
+	  </field>
+</form>
+<form name="setBlockCodeUpdateForm">
+	<field property="svcname" depends="required,maxlength,minlength">
+		<arg0 key="vessel.svcname.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	  </field>
+	  <field property="portofloadingcode" depends="required,maxlength,minlength">
+		<arg0 key="booking.portofloadingcode.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	</field>
+    <field property="block_code" depends="required,maxlength,minlength">
+		<arg0 key="booking.blockcode.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>5</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>5</var-value>
+	  </var>
+	</field>
+</form>
+<form name="setOneWayCtnForm">
+	<field property="location" depends="required,maxlength,minlength">
+		<arg0 key="depot.location.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	  </field>
+	  <field property="dest" depends="required,maxlength,minlength">
+		<arg0 key="booking.placeofdeliverycode.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>3</var-value>
+	  	</var>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+	  	<var-name>minlength</var-name>
+	  	<var-value>3</var-value>
+	  </var>
+	  </field>
+	  <field property="oremark" depends="maxlength">
+		<arg0 key="booking.status.remark.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<var>
+	  	<var-name>maxlength</var-name>
+	  	<var-value>100</var-value>
+	  	</var>
+	</field>
+</form>
+<form name="adminBulletinForm">
+	<field property="brief" depends="required,maxlength">
+	<arg0 key="news.brief.displayname"/>
+	<arg1 key="${var:maxlength}" resource="false"/>
+	<var>
+	  		<var-name>maxlength</var-name>
+	  		<var-value>40</var-value>
+	</var>
+	</field>
+	<field property="content" depends="required,maxlength">
+	<arg0 key="news.content.displayname"/>
+	<arg1 key="${var:maxlength}" resource="false"/>
+	<var>
+	  		<var-name>maxlength</var-name>
+	  		<var-value>400</var-value>
+	</var>
+	</field>
+	<field property="begDate" depends="required,date">
+	<arg0 key="news.begdate.displayname"/>
+	<arg1 key="format.date.standard" resource="true"/>
+	</field>
+	<field property="endDate" depends="required,date">
+	<arg0 key="news.enddate.displayname"/>
+	<arg1 key="format.date.standard" resource="true"/>
+	</field>
+</form>
+<form name="getCtnReportForm">
+	<field property="begDate" depends="required,date">
+	<arg0 key="ctnreport.begdate.displayname"/>
+	<arg1 key="format.date.standard" resource="true"/>
+	</field>
+	<field property="endDate" depends="required,date">
+	<arg0 key="ctnreport.enddate.displayname"/>
+	<arg1 key="format.date.standard" resource="true"/>
+	</field>
+</form>
+<form name="getPendingCtnForm">
+	<field property="begPassedDate" depends="required,date">
+	<arg0 key="ctnreport.begdate.displayname"/>
+	<arg1 key="format.date.standard" resource="true"/>
+	</field>
+	<field property="endPassedDate" depends="required,date">
+	<arg0 key="ctnreport.enddate.displayname"/>
+	<arg1 key="format.date.standard" resource="true"/>
+	</field>
+</form>
+<form name="setNormalCheckForm">
+	<field property="blnumber" depends="required,integer,intRange">
+        <arg0 key="booking.blnumber.displayname" />
+        <arg1 key="${var:min}" resource="false"/>
+        <arg2 key="${var:max}" resource="false"/>
+      <var>
+       <var-name>min</var-name>
+       <var-value>60000000</var-value>
+      </var>
+      <var>
+       <var-name>max</var-name>
+       <var-value>999999999</var-value>
+      </var>
+    </field>
+</form>
+
+<form name="setBookingInfoForm">
+	<field property="setBI_blnumber" depends="required,integer,intRange">
+        <arg0 key="booking.blnumber.displayname" />
+        <arg1 key="${var:min}" resource="false"/>
+        <arg2 key="${var:max}" resource="false"/>
+      <var>
+       <var-name>min</var-name>
+       <var-value>60000000</var-value>
+      </var>
+      <var>
+       <var-name>max</var-name>
+       <var-value>999999999</var-value>
+      </var>
+    </field>
+    <field property="setBI_blockcode" depends="required,minlength,maxlength">
+		<arg0 key="booking.blockcode.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+		  		<var-name>maxlength</var-name>
+		  		<var-value>5</var-value>
+		</var>
+		<var>
+		  		<var-name>minlength</var-name>
+		  		<var-value>5</var-value>
+		</var>
+	</field>
+</form>
+
+<form name="setVslVoyForm">
+	<field property="vblnumber" depends="required,integer,intRange">
+        <arg0 key="booking.blnumber.displayname" />
+        <arg1 key="${var:min}" resource="false"/>
+        <arg2 key="${var:max}" resource="false"/>
+      <var>
+       <var-name>min</var-name>
+       <var-value>60000000</var-value>
+      </var>
+      <var>
+       <var-name>max</var-name>
+       <var-value>999999999</var-value>
+      </var>
+    </field>
+	<field property="vslcd" depends="required,minlength,maxlength">
+		<arg0 key="vessel.id.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+		  		<var-name>maxlength</var-name>
+		  		<var-value>3</var-value>
+		</var>
+		<var>
+		  		<var-name>minlength</var-name>
+		  		<var-value>3</var-value>
+		</var>
+	</field>
+	<field property="voyid" depends="required,integer,minlength,maxlength">
+		<arg0 key="booking.voyage.displayname"/>
+		<arg1 key="${var:maxlength}" resource="false"/>
+		<arg2 key="${var:minlength}" resource="false"/>
+		<var>
+		  		<var-name>maxlength</var-name>
+		  		<var-value>3</var-value>
+		</var>
+		<var>
+		  		<var-name>minlength</var-name>
+		  		<var-value>3</var-value>
+		</var>
+	</field>
+</form>
+</formset>
+
+</form-validation>

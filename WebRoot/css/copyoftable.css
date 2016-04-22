@@ -1,0 +1,18 @@
+/*
+Author: Henrique Costa Pereira
+Site: www.revolucao.etc.br
+Country Origin: Brazil
+*/
+
+table { font:12px Arial, Helvetica, sans-serif; background-color:#F2F2F2; }
+caption { background-color:#5A666E; color:#FFF; text-transform:uppercase; font-weight:bold; font-size:1.2em; border:1px solid #000; }
+thead th { background-color:#F5B348; color:#724809; padding:2px; text-transform:uppercase; border-top:1px solid #F4D39E; border-left:1px solid #F4D39E; border-bottom:1px solid #B76E00; border-right:1px solid #B76E00; }
+tfoot th { background-color:#F29601; color:#724809; padding:2px; text-transform:uppercase; font-size:1.2em; }
+tfoot td { background-color:#FC0; color:#724809; font-weight:bold; text-transform:uppercase; font-size:1.2em; padding:0px 5px; }
+.trOdd {background-color:#999999;color:#D7DBDD; padding:2px; text-align:center; border-top:1px solid #FFF; border-left:1px solid #FFF; border-bottom:1px solid #AFB5B8; border-right:1px solid #AFB5B8;}
+.trEven {background-color:#D7DBDD; color:#5A666E; padding:2px; text-align:center; border-top:1px solid #FFF; border-left:1px solid #FFF; border-bottom:1px solid #AFB5B8; border-right:1px solid #AFB5B8;  }
+tbody th { background-color:#5A666E; color:#D7DBDD; padding:2px; text-align:center; border-top:1px solid #93A1AA; border-left:1px solid #93A1AA; border-bottom:1px solid #2F3B42; border-right:1px solid #2F3B42; }
+tbody td a {  color:#724809; text-decoration:none; font-weight:bold; }
+tbody td a:hover { background-color:#F5B348; color:#FFF; }
+tbody th a { color:#FFF; text-decoration:none; font-weight:bold; }
+tbody th a:hover { color:#FC0; text-decoration:underline; }

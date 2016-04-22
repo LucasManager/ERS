@@ -1,0 +1,259 @@
+.DataTitle {
+	BACKGROUND-IMAGE: url(../image/mainlabel.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	BACKGROUND-COLOR: #b9d1f4 FONT-WEIGHT :   bold;
+	FONT-SIZE: 8pt;
+	COLOR: #003399;
+	FONT-FAMILY: "����",Arial;
+	text-align: center;
+}
+.VesselNameDataBody {
+	font-size: 10pt;
+	/*FONT-FAMILY: verdana, arial, helvetica, sans-serif;*/
+	FONT-FAMILY: "����",Arial;
+	text-align: left;
+}
+.DataBody {
+	font-size: 10pt;
+	/*FONT-FAMILY: verdana, arial, helvetica, sans-serif;*/
+	FONT-FAMILY: "����",Arial;
+	text-align: right;
+}
+
+.BlockCodeDataBody {
+	font-size: 10pt;
+	/*FONT-FAMILY: verdana, arial, helvetica, sans-serif;*/
+	FONT-FAMILY: "����",Arial;
+	text-align: left;
+	width: 52pt;
+}
+.DataBody A:link {
+	FONT-WEIGHT: bold;
+	COLOR: #003399;
+	FONT-FAMILY: "����",Arial;
+	TEXT-DECORATION: none
+}
+
+.DataBody A:visited {
+	FONT-WEIGHT: bold;
+	COLOR: #003399;
+	FONT-FAMILY: "����",Arial;
+	TEXT-DECORATION: none
+}
+
+.DataBody A:hover {
+	CURSOR: hand;
+	COLOR: red;
+	background-color: lightblue;
+	TEXT-DECORATION: none;
+}
+
+.WPTitle {
+	PADDING-RIGHT: 7px;
+	PADDING-LEFT: 6px;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10pt;
+	PADDING-BOTTOM: 2px;
+	COLOR: #003399;
+	PADDING-TOP: 2px;
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+
+.WPTitle A:link {
+	CURSOR: hand;
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 10pt; 
+	COLOR: fuchsia; 
+	FONT-FAMILY: "����",Arial; 
+	TEXT-DECORATION: none
+}
+
+.WPTitle A:visited {
+	CURSOR: hand;
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 10pt; 
+	COLOR: fuchsia; 
+	FONT-FAMILY: "����",Arial;
+	TEXT-DECORATION: none
+}
+
+.WPTitle A:hover {
+	CURSOR: hand;
+	FONT-WEIGHT: bold; 
+	FONT-SIZE: 10pt; 
+	COLOR: red; 
+	FONT-FAMILY: "����",Arial;
+	TEXT-DECORATION: none
+}
+.checked {
+	PADDING-RIGHT: 7px;
+	PADDING-LEFT: 6px;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10pt;
+	PADDING-BOTTOM: 2px;
+	COLOR: #003399;
+	PADDING-TOP: 2px;
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif
+}
+
+.WPHeader {
+	BACKGROUND-IMAGE: url(../image/mainlabel.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	BACKGROUND-COLOR: #b9d1f4
+}
+
+.WPBody {
+	font-size: 10pt;
+	FONT-FAMILY: "����",Arial;
+}
+
+.WPBody A:link {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 8pt;
+	COLOR: #808080;
+	FONT-FAMILY: "����",Arial;
+	TEXT-DECORATION: none
+}
+
+.WPBody A:visited {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 8pt;
+	COLOR: #808080;
+	FONT-FAMILY: "����",Arial;
+	TEXT-DECORATION: none
+}
+
+.WPBody TD {
+	padding-top: 2pt;
+	padding-bottom: 5pt;
+	padding-left: 2pt;
+}
+
+.ErrorTitle {
+	BACKGROUND-IMAGE: url(../image/mainlabel.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	BACKGROUND-COLOR: #b9d1f4 FONT-WEIGHT :   bold;
+	FONT-SIZE: 20pt;
+	COLOR: #003399;
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif;
+}
+
+.ErrorData {
+	color: red;
+}
+.MessageData {
+	color: blue;
+}
+.inputbox {
+	border-color: black black #003399;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	background-color: #FFFFFF;
+	FONT-FAMILY: "����",Arial;
+	font-size: 12px;
+}
+
+.button {
+	width: 50px;
+	BORDER-RIGHT: white 1px solid;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: white 1px solid;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 12px;
+	FILTER: Alpha(style = 1, opacity = 25, finishOpacity = 100, startX = 0, finishX
+		= 50px, startY = 0, finishY = 25px);
+	background-color: #b9d1f4;
+	CURSOR: pointer;
+	COLOR: highlight;
+	PADDING-TOP: 2px;
+	border: buttonshadow 1px solid;
+}
+
+.button_bak2 {
+	width: 50px;
+	BORDER-RIGHT: white 1px solid;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: white 1px solid;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 12px;
+	FILTER: progid : DXImageTransform . Microsoft .
+		Gradient(GradientType = 2, StartColorStr = #ffffff, EndColorStr =
+		#b9d1f4);
+	CURSOR: hand;
+	COLOR: highlight;
+	PADDING-TOP: 2px;
+	border: buttonshadow 1px solid;
+}
+
+.SetForm {
+	font-size: 10px;
+	color: gray;
+}
+.SetForm table {
+	font-size: 10px;
+	color: gray;
+}
+#siteInfo{
+	clear: both;
+	border-top: 1px solid #999999;
+	font-size: small;
+	color: #999999;
+	padding: 10px 10px 10px 10px;
+	margin-top: 0px;
+}
+
+#siteInfo img{
+	padding: 4px 4px 4px 0px;
+	vertical-align: middle;
+}
+.listable { font:12px Arial, Helvetica, sans-serif; background-color:#F2F2F2; }
+.listable th { BACKGROUND-IMAGE: url(../image/mainlabel.gif);
+	BACKGROUND-REPEAT: repeat-x;BACKGROUND-COLOR: #b9d1f4; color:#724809; padding:2px; text-transform:uppercase; border-top:1px solid #F4D39E; border-left:1px solid #F4D39E; border-bottom:1px solid #B76E00; border-right:1px solid #B76E00; }
+.trOdd {background-color:#EBF2FC;color:#1D4CA6; padding:2px; text-align:center; border-top:1px solid #FFF; border-left:1px solid #FFF; border-bottom:1px solid #AFB5B8; border-right:1px solid #AFB5B8;}
+.trEven {background-color:#1D4CA6; color:white; padding:2px; text-align:center; border-top:1px solid #FFF; border-left:1px solid #FFF; border-bottom:1px solid #AFB5B8; border-right:1px solid #AFB5B8;  }
+.listable td a {  FONT-WEIGHT: bold;COLOR: silver; FONT-FAMILY: "����",Arial; TEXT-DECORATION: none }
+.listable td a:hover { CURSOR: hand; COLOR: red; background-color: lightblue; TEXT-DECORATION: none; }
+.listable th a { color:#FFF; text-decoration:none; font-weight:bold; }
+.listable th a:hover { color:#FC0; text-decoration:underline; }
+
+.newsScroll {font-size:12px;color: black;
+	}
+
+a.btn {
+	width: 50px;
+	BORDER-RIGHT: white 1px solid;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: white 1px solid;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 12px;
+	FILTER: Alpha(style = 1, opacity = 25, finishOpacity = 100, startX = 0, finishX
+		= 50px, startY = 0, finishY = 25px);
+	background-color: #b9d1f4;
+	COLOR: red;
+	PADDING-TOP: 2px;
+	border: buttonshadow 1px solid;
+	height: 20px;
+	margin-top: 1px;
+	text-align: center;
+}
+a.btn:hover {
+    border-color:#0cc #036 #036 #0cc;
+	color:#fff;
+	background:#09c;
+	text-decoration:none;
+}
+.distributionDepot{
+	width:60px;
+	text-decoration:none;
+	BORDER-RIGHT: white 1px solid;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: white 1px solid;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 13px;
+	background-color: #b9d1f4;
+	CURSOR: pointer;
+	PADDING-TOP: 2px;
+	border: buttonshadow 1px solid;
+}
