@@ -1,0 +1,59 @@
+package com.apl.sha.ers.util;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.apl.sha.ers.model.BookingCtn;
+import com.apl.sha.ers.model.DepotCtn;
+
+public class BizUtil {
+	public static List alctDepotCtns(List ctns,int ctnQty) {
+		List list=new ArrayList();
+		int allRemainQty=0;
+		int alctQty=0;
+		for(Iterator it=ctns.iterator();it.hasNext();) {
+			DepotCtn ctn=(DepotCtn) it.next();
+			int dptRemainQty=ctn.getInitalQty()-ctn.getReservedQty()-ctn.getPickupedQty();
+				dptRemainQty=(dptRemainQty>0)?dptRemainQty:0;
+			allRemainQty=allRemainQty+dptRemainQty;
+		}
+		if(allRemainQty>0) {
+			int dptRemainQty=0;
+			for(Iterator it=ctns.iterator();it.hasNext();) {
+				BookingCtn bkgCtn=new BookingCtn();
+				DepotCtn ctn=(DepotCtn) it.next();
+				dptRemainQty=ctn.getInitalQty()-ctn.getReservedQty()-ctn.getPickupedQty();
+				alctQty=(int) Math.ceil((ctnQty * (double)(dptRemainQty)/allRemainQty));
+				if(ctn.getCtnCode().contains("20")) {
+					if(alctQty<ctnQty&&alctQty%2==1) alctQty++;
+				}
+				if(alctQty>ctnQty)alctQty=ctnQty;
+				bkgCtn.setDepotCode(ctn.getDepotCode());
+				bkgCtn.setCtnQty(alctQty);
+				list.add(bkgCtn);
+				ctnQty=ctnQty-alctQty;
+				if(ctnQty==0) break;
+				allRemainQty=allRemainQty-dptRemainQty;
+			}
+		}else {
+			int dptCount=ctns.size();
+			for(Iterator it=ctns.iterator();it.hasNext();) {
+				BookingCtn bkgCtn=new BookingCtn();
+				DepotCtn ctn=(DepotCtn) it.next();
+				alctQty=(int) Math.ceil(ctnQty * (double)1/dptCount);
+				if(ctn.getCtnCode().contains("20")) {
+					if(alctQty<ctnQty&&alctQty%2==1) alctQty++;
+				}
+				if(alctQty>ctnQty)alctQty=ctnQty;
+				bkgCtn.setDepotCode(ctn.getDepotCode());
+				bkgCtn.setCtnQty(alctQty);
+				list.add(bkgCtn);
+				ctnQty=ctnQty-alctQty;
+				if(ctnQty==0) break;
+				dptCount--;
+			}
+		}
+		return list;
+	}
+}
