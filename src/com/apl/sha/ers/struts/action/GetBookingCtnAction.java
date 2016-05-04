@@ -110,7 +110,10 @@ public class GetBookingCtnAction extends BaseAction {
 					desctmp = bdesctmp.getSdesc();
 					commenttmp = bdesctmp.getComments();
 					preasontmp = bdesctmp.getP_reasons();
-					
+					if("Reject".equalsIgnoreCase(desctmp))
+					{
+						desctmp = "Pls book to next Vessel/Voyage";
+					}
 					if(!preasontmp.equalsIgnoreCase("No Pending Reasons"))
 					{
 						String[] preasons=preasontmp.split("#");
