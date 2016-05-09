@@ -156,8 +156,11 @@
        <!-- 分配堆场 -->
    <action path="/distributionDepot" type="org.springframework.web.struts.DelegatingActionProxy">
       <forward name="success" path="/getBookingCtn.do" />
-      
     </action>
+   <action path="/getBLByRefer" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="success" path="/home.jsp" />
+    </action>
+    
     <action path="/setBookingStatus" 
             input="/getBookingCtn.jsp"
             type="org.springframework.web.struts.DelegatingActionProxy">
