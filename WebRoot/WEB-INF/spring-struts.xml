@@ -3,6 +3,9 @@
 
 <beans>
 <import resource="spring-db.xml"/>
+	<bean name="/getBLByRefer" class="com.apl.sha.ers.struts.action.GetBLByReferAction" >
+		<property name="process" ref="processingProxy"></property>
+	</bean>
 <!-- 分配堆场 -->
 	<bean name="/distributionDepot" class="com.apl.sha.ers.struts.action.DistributionDepotAction">
 		<property name="process"><ref bean="processingProxy"/> </property>
