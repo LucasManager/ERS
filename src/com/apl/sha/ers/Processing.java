@@ -25,6 +25,7 @@ import com.apl.sha.ers.exception.NonUniqueDataException;
 import com.apl.sha.ers.model.Booking;
 import com.apl.sha.ers.model.BookingCtn;
 import com.apl.sha.ers.model.BookingCtnGroup;
+import com.apl.sha.ers.model.BookingReference;
 import com.apl.sha.ers.model.Container;
 import com.apl.sha.ers.model.CtnType;
 import com.apl.sha.ers.model.Depot;
@@ -146,6 +147,16 @@ public class Processing {
 	public boolean distributionDepot(int blnumber,User user)
 	{
 		return db.distributionDepot(blnumber,user);
+	}
+	
+	public List<BookingReference> getBlByReferNo(String refereceNo) throws NoDataException
+	{
+		List<BookingReference> list = db.getBlByReferNo(refereceNo);
+		if (list==null || list.size()==0)
+		{
+			throw new NoDataException(); 
+		}
+		return list;
 	}
 	
 	
