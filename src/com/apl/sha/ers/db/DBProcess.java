@@ -679,6 +679,21 @@ public class DBProcess {
 		return result;
 	}
 	
+	
+	public List getBlByReferNo(String referenceNo)
+	{
+//		String sql = "select b.BLNUMBER as blnumber,t.BOOKING_PARTY_CODE as bookingparty,t.DESC_CN as descCN," +
+//				"t.DESC_EN as descEN,to_char(s.RECEIVETIME,'yyyy-MM-dd hh:mm:ss') as receiveTime " +
+//				"from ERS.BOOKING b,webedi.T_BOOKING_PARTY t,ERS.BOOKINGSTATUS s "+
+//				"where b.REFERENCENO=? and b.BOOKINGPARTY = t.BOOKING_PARTY_CODE and b.BLNUMBER = s.BLNUMBER order by s.RECEIVETIME asc";
+		String sql = "select b.BLNUMBER as blnumber,b.bookingparty as bookingparty,to_char(s.RECEIVETIME,'yyyy-MM-dd hh:mm:ss') as  receiveTime" +
+//				" '' as descCN,'' as descEN " +
+				" from ERS.BOOKING b,ERS.BOOKINGSTATUS s where b.REFERENCENO=? and b.BLNUMBER = s.BLNUMBER order by s.RECEIVETIME asc";
+		Object[] param = new Object[]{referenceNo};
+		List<BookingReference> list = jdbc.query(sql,param,new RowMapperImpl(BookingReference.class));
+		return list;
+	}
+	
 
 	public List getBookingCtns(List bookings) {
 		String whereClause="";
