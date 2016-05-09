@@ -48,7 +48,7 @@
 			<td colspan="1" class="DataTitle"><fmt:message key="booking.maxtemp.displayname"/>:</td>
 			<td colspan="2" class="BlockCodeDataBody"><c:out value="${booking.maxtemp}"/></td>
 			<td colspan="1" class="DataTitle"><fmt:message key="booking.mintemp.displayname"/>:</td>
-			<td colspan="2" class="BlockCodeDataBody"><c:out value="${booking.blockcode}"/></td>
+			<td colspan="2" class="BlockCodeDataBody"><c:out value="${booking.mintemp}"/></td>
 			<td colspan="3"></td>
 		</tr>
   		</table>
