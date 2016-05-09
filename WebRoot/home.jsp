@@ -189,6 +189,50 @@
 		  	</form>
 		</td>
 	</tr>
+	<tr class="WPHeader">
+		<td>
+		<div class="WPTitle">
+		<NOBR><SPAN> 
+		<fmt:message key="getBookingBL.refereceNo.displayname"/>
+		</SPAN>
+		</NOBR>
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		  	<form action="getBLByRefer.do">
+		  	<table>
+			  	<tr class="WPBody">
+			  		<td valign="top">
+		  			<fmt:message key="refereceNo.displayname"/>:<input type="text" name="referenceNo" value="${referenNo }" size="11" />
+			  		</td>
+			  		<td valign="bottom">
+				  		<input type="image" src="image/go.gif" />
+			  		</td>
+			  	</tr>
+	  		</table>
+	  		<table id="showB" class="listable" cellspacing=7 >
+	  			<thead >
+	  				<tr style="font-weight:bold;font-size:15px;">
+	  					&nbsp;&nbsp;<td style="height:29px;"><fmt:message key="booking.blnumber.displayname"/></td>
+<!-- 	  					&nbsp;&nbsp;<td style="height:29px;"><fmt:message key="company.desc.displayname"/></td> -->
+	  					&nbsp;&nbsp;<td style="height:29px;"><fmt:message key="booking.receiveTime.displayname"/></td>
+	  				</tr>
+	  			</thead>
+	  			<tbody>
+		  			<c:forEach items="${refereMess }" var="bl">
+						<tr >
+							&nbsp;&nbsp;<td><c:out value="${bl.blnumber}"></c:out></td>
+<!-- 							&nbsp;&nbsp;<td>${bl.bookingparty}</td> -->
+							&nbsp;&nbsp;<td>${bl.receiveTime }</td>
+						</tr>
+					</c:forEach>
+	  			</tbody>
+	  		</table>
+		  	</form>
+		</td>
+	</tr>
 	</ers:priv>
 	<ers:priv privName="GetDepotAction">
 	<tr class="WPHeader">
