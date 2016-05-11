@@ -32,9 +32,11 @@ public class GetBLByReferAction extends BaseAction {
 		String res = "";
 		try{
 			res = request.getParameter("referenceNo");
-			List<BookingReference> list = process.getBlByReferNo(res);
-			request.setAttribute("refereMess", list);
-			request.setAttribute("referenNo", res);
+			if(res!=null && !res.trim().equals("")){
+				List<BookingReference> list = process.getBlByReferNo(res.toUpperCase());
+				request.setAttribute("refereMess", list);
+				request.setAttribute("referenNo", res);
+			}
 		}catch(Exception e){
 			if(e!=null && e.getMessage()!=null)
 			{
