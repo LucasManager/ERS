@@ -1,6 +1,7 @@
 package com.apl.sha.ers.model;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class BookingReference implements Serializable {
 
@@ -11,22 +12,12 @@ public class BookingReference implements Serializable {
 	
 	private String blnumber;
 	private String bookingparty;
-	private String descCN;
-	private String descEN;
+	private String vesselName;
+	private String voyage;
+	private String packages;
+	private String kindOfPackages;
 	private String receiveTime;
 	
-	public String getDescCN() {
-		return descCN;
-	}
-	public void setDescCN(String descCN) {
-		this.descCN = descCN;
-	}
-	public String getDescEN() {
-		return descEN;
-	}
-	public void setDescEN(String descEN) {
-		this.descEN = descEN;
-	}
 	public String getBlnumber() {
 		return blnumber;
 	}
@@ -44,6 +35,43 @@ public class BookingReference implements Serializable {
 	}
 	public void setReceiveTime(String receiveTime) {
 		this.receiveTime = receiveTime;
+	}
+	public String getVesselName() {
+		return vesselName;
+	}
+	public void setVesselName(String vesselName) {
+		this.vesselName = vesselName;
+	}
+	public String getVoyage() {
+		return voyage;
+	}
+	public void setVoyage(String voyage) {
+		this.voyage = voyage;
+	}
+	public String getPackages() {
+		return packages;
+	}
+	public void setPackages(String packages) {
+		this.packages = packages;
+	}
+	
+	/**
+	 * 把数字的blNo 格式化为9位数
+	 * @param blNo
+	 * @return
+	 */
+	public String formatBL(String blNo)
+	{
+		long bl = Long.valueOf(blNo);
+		DecimalFormat blFormate = new DecimalFormat("000000000");
+		return blFormate.format(bl);
+		
+	}
+	public String getKindOfPackages() {
+		return kindOfPackages;
+	}
+	public void setKindOfPackages(String kindOfPackages) {
+		this.kindOfPackages = kindOfPackages;
 	}
 	
 }
