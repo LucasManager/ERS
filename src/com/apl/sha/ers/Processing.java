@@ -1,5 +1,6 @@
 package com.apl.sha.ers;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -155,6 +156,10 @@ public class Processing {
 		if (list==null || list.size()==0)
 		{
 			throw new NoDataException(); 
+		}
+		for (BookingReference bf : list) {
+			String bl = bf.getBlnumber();
+			bf.setBlnumber(bf.formatBL(bl));
 		}
 		return list;
 	}
